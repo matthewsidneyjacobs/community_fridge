@@ -29,7 +29,11 @@ module.exports = {
       Nav: 'app/components/Nav.jsx',
       Main: 'app/components/Main.jsx',
       MyFridge: 'app/components/MyFridge.jsx',
-      CommunityFridge: 'app/components/CommunityFridge.jsx'
+      CommunityFridge: 'app/components/CommunityFridge.jsx',
+      PersonalItems: 'app/components/PersonalItems.jsx',
+      PersonalControls: 'app/components/PersonalControls.jsx',
+      CommunityItems: 'app/components/CommunityItems.jsx',
+      Login: 'app/components/Login.jsx'
     },
     extensions: ['','.js','.jsx']
   },

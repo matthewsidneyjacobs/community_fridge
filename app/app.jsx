@@ -5,6 +5,7 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
 var MyFridge = require('MyFridge');
 var CommunityFridge = require('CommunityFridge');
+var Login = require('Login');
 
 //Load foundation
 $(document).foundation();
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Route path="/" component={Main}>
       <IndexRoute component={MyFridge}/>
       <Route path="community" component={CommunityFridge}/>
+      <Route path="login" component={Login}/>
     </Route>
   </Router>,
   document.getElementById('app')

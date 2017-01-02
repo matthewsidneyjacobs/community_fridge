@@ -1,9 +1,13 @@
 var React = require('react');
+var CommunityItems = require('CommunityItems');
 
 var CommunityFridge = React.createClass({
   render: function () {
     return (
-      <h1>This is the community fridge page</h1>
+      <div>
+        <h1 className="page-title">Community Fridge</h1>
+        <CommunityItems/>
+      </div>
     );
   }
 })

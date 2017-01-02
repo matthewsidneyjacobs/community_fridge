@@ -17,7 +17,9 @@ var Nav = () =>{
         </div>
         <div className="top-bar-right">
           <ul className="menu">
-            <li className="menu-text">Created by <a href="http://www.google.com" target="_blank">Sid</a></li>
+            <li className="menu-text">
+              <button className="button login_button"><Link to="/login" style={{color:'white'}}>LogIn/LogOut</Link></button>
+            </li>
           </ul>
         </div>
       </div>

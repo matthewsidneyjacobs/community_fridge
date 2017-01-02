@@ -1,9 +1,15 @@
 var React = require('react');
+var PersonalItems = require('PersonalItems');
+var PersonalControls = require('PersonalControls');
 
 var MyFridge = React.createClass({
   render: function () {
     return (
-      <h1>This is the my fridge page</h1>
+      <div>
+        <h1 className="page-title">My Fridge</h1>
+        <PersonalItems/>
+        <PersonalControls/>
+      </div>
     )
   }
 })
