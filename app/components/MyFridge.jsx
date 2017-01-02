@@ -8,7 +8,7 @@ var MyFridge = React.createClass({
       <div>
         <h1 className="page-title">My Fridge</h1>
         <PersonalItems/>
-        <PersonalControls/>
+        {/* <PersonalControls/> */}
       </div>
     )
   }

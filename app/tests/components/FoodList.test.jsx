@@ -25,6 +25,7 @@ describe('FoodList', () => {
     ];
     var itemList = TestUtils.renderIntoDocument(<FoodList items={items}/>);
     var itemComponents = TestUtils.scryRenderedComponentsWithType(itemList, FoodItem);
+    //this scry test is for React- it helps test component lengths? 
 
     expect(itemComponents.length).toBe(items.length);
   });

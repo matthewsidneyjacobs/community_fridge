@@ -1,5 +1,6 @@
 var React = require('react');
 var FoodList = require('FoodList');
+var PersonalControls = require('PersonalControls');
 
 var PersonalItems = React.createClass({
   getInitialState: function() {
@@ -24,11 +25,15 @@ var PersonalItems = React.createClass({
       ]
     }
   },
+  handleAddItem: function(text) {
+    alert('new food item:' + text);
+  },
   render: function () {
     var {items} = this.state;
     return (
       <div>
         <FoodList items={items}/>
+        <PersonalControls onAddItem={this.handleAddItem}/>
       </div>
     )
   }
