@@ -2,45 +2,53 @@ var React = require('react');
 var FoodList = require('FoodList');
 var PersonalControls = require('PersonalControls');
 var FoodSearch = require('FoodSearch');
+var ItemsAPI = require('ItemsAPI');
+var uuid = require('node-uuid');
 
 var PersonalItems = React.createClass({
   getInitialState: function() {
     return {
+      showCompleted: false,
       searchText: '',
-      items: [
-        {
-          id: 1,
-          text: 'carrots'
-        },
-        {
-          id:2,
-          text: 'cabbage'
-        },
-        {
-          id:3,
-          text: 'eggs'
-        },
-        {
-          id:4,
-          text: 'yams'
-        }
-      ]
-    }
+      items: ItemsAPI.getItems()
+    };
+  },
+  componentDidUpdate: function() {
+    ItemsAPI.setItems(this.state.items);
   },
   handleAddItem: function(text) {
-    alert('new food item:' + text);
+    this.setState ({
+      items: [
+        ...this.state.items,
+        {
+          id:uuid(),
+          text: text,
+          completed: false
+        }
+      ]
+    })
   },
   handleSearch: function(searchText) {
     this.setState({
-      searchText: searchText
+      showCompleted: showCompleted,
+      searchText: searchText.toLowerCase()
     })
+  },
+  handleToggle: function(id) {
+    var updatedItems = this.state.items.map((item) => {
+      if (item.id === id) {
+        item.completed = !item.completed;
+      }
+      return item;
+    });
+    this.setState({items: updatedItems});
   },
   render: function () {
     var {items} = this.state;
     return (
       <div>
         <FoodSearch onSearc={this.handleSearch}/>
-        <FoodList items={items}/>
+        <FoodList items={items} onToggle={this.handleToggle}/>
         <PersonalControls onAddItem={this.handleAddItem}/>
       </div>
     )

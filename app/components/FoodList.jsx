@@ -7,7 +7,7 @@ var FoodList = React.createClass({
     var renderItems = () => {
       return items.map((item) => {
         return (
-          <FoodItem key={item.id} {...item}/>
+          <FoodItem key={item.id} {...item} onToggle={this.props.onToggle}/>
         )
       });
     };
