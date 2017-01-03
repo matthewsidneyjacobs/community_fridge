@@ -4,6 +4,7 @@ var PersonalControls = require('PersonalControls');
 var FoodSearch = require('FoodSearch');
 var ItemsAPI = require('ItemsAPI');
 var uuid = require('node-uuid');
+var moment = require('moment');
 
 var PersonalItems = React.createClass({
   getInitialState: function() {
@@ -23,7 +24,8 @@ var PersonalItems = React.createClass({
         {
           id:uuid(),
           text: text,
-          completed: false
+          completed: false,
+          createdAt: moment().unix()
         }
       ]
     })
@@ -47,7 +49,7 @@ var PersonalItems = React.createClass({
     var {items, showCompleted, searchText} = this.state;
     var filteredItems = ItemsAPI.filterItems(items, showCompleted, searchText);
     return (
-      <div>
+      <div className="personal-container">
         <FoodSearch onSearch={this.handleSearch}/>
         <FoodList items={filteredItems} onToggle={this.handleToggle}/>
         <PersonalControls onAddItem={this.handleAddItem}/>

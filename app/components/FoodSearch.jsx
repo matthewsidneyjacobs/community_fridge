@@ -8,9 +8,9 @@ var FoodSearch = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <div className="personalSearch">
         <div>
-          <input type="search" ref="searchText" placeholder="Search Food Items" onChange={this.handleSearch}/>
+          <input className="search-box" type="search" ref="searchText" placeholder="Search Food Items" onChange={this.handleSearch}/>
           {/* //onchange kinda seems like filter in angular */}
         </div>
         {/* will i need to show completed trades? maybe past trades? this is the label for it */}

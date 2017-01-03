@@ -15,7 +15,7 @@ var PersonalControls = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <div className="control-box">
       <form ref="form" onSubmit={this.onSubmit} className="UpdateItems-form">
         <input type="text" ref="EditItems" placeholder="Enter New Food Item Here"/>
         <button className="button expanded custom">Add New Item</button>
