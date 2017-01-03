@@ -30,7 +30,7 @@ var PersonalItems = React.createClass({
   },
   handleSearch: function(searchText) {
     this.setState({
-      showCompleted: showCompleted,
+      // showCompleted: showCompleted,
       searchText: searchText.toLowerCase()
     })
   },
@@ -44,11 +44,12 @@ var PersonalItems = React.createClass({
     this.setState({items: updatedItems});
   },
   render: function () {
-    var {items} = this.state;
+    var {items, showCompleted, searchText} = this.state;
+    var filteredItems = ItemsAPI.filterItems(items, showCompleted, searchText);
     return (
       <div>
-        <FoodSearch onSearc={this.handleSearch}/>
-        <FoodList items={items} onToggle={this.handleToggle}/>
+        <FoodSearch onSearch={this.handleSearch}/>
+        <FoodList items={filteredItems} onToggle={this.handleToggle}/>
         <PersonalControls onAddItem={this.handleAddItem}/>
       </div>
     )

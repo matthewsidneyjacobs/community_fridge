@@ -21,5 +21,14 @@ module.exports = {
     } else {
       return [];
     }
+  },
+  filterItems: function(items, showCompleted, searchText) {
+    var filteredItems = items;
+
+    filteredItems = filteredItems.filter((item) => {
+      var select = item.text.toLowerCase();
+      return searchText.length === 0 || select.indexOf(searchText) >-1;
+    })
+    return filteredItems;
   }
 }
