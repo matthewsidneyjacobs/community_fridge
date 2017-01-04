@@ -15,6 +15,10 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 
 
+app.get('/', function(req,res) {
+  res.send('todo API root');
+});
+
 app.listen(PORT, function() {
   console.log('listening on port: ' + PORT);
 })

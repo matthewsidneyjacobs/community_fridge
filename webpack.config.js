@@ -38,7 +38,8 @@ module.exports = {
       PersonalItems: 'app/components/PersonalItems.jsx',
       PersonalControls: 'app/components/PersonalControls.jsx',
       CommunityItems: 'app/components/CommunityItems.jsx',
-      Login: 'app/components/Login.jsx'
+      Login: 'app/components/Login.jsx',
+      Chat: 'app/components/Chat.jsx'
     },
     extensions: ['','.js','.jsx']
   },
